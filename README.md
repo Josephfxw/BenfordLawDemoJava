@@ -1,15 +1,13 @@
 # BenfordLawDemoJava
 
- 
 According to Benford’s law, in data in some large-enough numerical datasets, the first significant digit is 1 much more often than would be expected; in fact, 1 occurs as the first significant digit in the data almost 30% of the time, and 9 occurs less than 5% of the time. (We would expect each to occur one-ninth, or about 11%, of the time if each digit were equally likely to occur as the first significant digit.)
 
+# Accounting fraud detection
+the law could be used to detect possible fraud in lists of socio-economic data submitted in support of public planning decisions. Based on the plausible assumption that people who make up figures tend to distribute their digits fairly uniformly, a simple comparison of first-digit frequency distribution from the data with the expected distribution according to Benford's Law ought to show up any anomalous results.So Benford's Law could be used in forensic accounting and auditing as an indicator of accounting and expenses fraud.
+
+
 According to Benford’s law, each digit occurs as the first significant digit in a dataset as follows:
-- Use it in Activity or Fragment
-- Select images including JPEG, PNG, GIF and videos including MPEG, MP4 
-- Apply different themes, including two built-in themes and custom themes
-- Different image loaders
-- Define custom filter rules
-- More to find out yourself
+
 
 | Digit                          |    Percentage                     | 
 |:------------------------------:|:---------------------------------:|
@@ -24,7 +22,7 @@ According to Benford’s law, each digit occurs as the first significant digit i
 | 9                              |4.576%                             |
 
 
-We want to computationally determine if the data in a given dataset follows Benford’s law.
+This program implemented in Java computationally determines if the data in a given dataset follows Benford’s law.
 
 ## Input
 The file data.txt, which contains our dataset as rows of numerical data, with each row representing one unit of data.
