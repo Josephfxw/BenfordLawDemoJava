@@ -15,6 +15,7 @@ According to Benford’s law, each digit occurs as the first significant digit i
 | Digit                          |    Percentage                     | 
 |:------------------------------:|:---------------------------------:|
 | 1                              |30.103%                            |
+|:------------------------------:|:---------------------------------:|
 | 1                              |30.103%                            |
 
 ## Download
