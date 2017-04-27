@@ -15,110 +15,32 @@ According to Benford’s law, each digit occurs as the first significant digit i
 | Digit                          |    Percentage                     | 
 |:------------------------------:|:---------------------------------:|
 | 1                              |30.103%                            |
-|:------------------------------:|:---------------------------------:|
-| 1                              |30.103%                            |
+| 2                              |17.609%                            |
+| 3                              |12.494%                            |
+| 4                              |9.691%                             |
+| 5                              |7.918%                             |
+| 6                              |6.695%                             |
+| 7                              |5.799%                             |
+| 8                              |5.115%                             |
+| 9                              |4.576%                             |
 
-## Download
-Gradle:
 
-```groovy
-repositories {
-    jcenter()
-}
+We want to computationally determine if the data in a given dataset follows Benford’s law.
 
-dependencies {
-    compile 'com.zhihu.android:matisse:0.4.3'
-}
-```
+## Input
+The file data.txt, which contains our dataset as rows of numerical data, with each row representing one unit of data.
 
-## ProGuard
-If you use [Glide](https://github.com/bumptech/glide) as your image engine, you may need the following rules:
-```pro
--keep public class * implements com.bumptech.glide.module.GlideModule
--keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
-  **[] $VALUES;
-  public *;
-}
+## Output
+The percentage of occurrence of each digit as the first significant digit in the data, represented both numerically and visually.
 
-# for DexGuard only
--keepresourcexmlelements manifest/application/meta-data@value=GlideModule
-```
-If you use [Picasso](https://github.com/square/picasso) as your image engine, you may need the following rules:
-```pro
--dontwarn com.squareup.okhttp.**
-```
+Your output should appear as follows:
 
-## How do I use Matisse?
-#### Permission
-The library requires two permissions:
-- `android.permission.READ_EXTERNAL_STORAGE`
-- `android.permission.WRITE_EXTERNAL_STORAGE`
-
-So if you are targeting Android 6.0+, you need to handle runtime permission request before next step.
-
-#### Simple usage snippet
-------
-Start `MatisseActivity` from current `Activity` or `Fragment`:
-
-```java
-Matisse.from(MainActivity.this)
-        .choose(MimeType.allOf())
-        .countable(true)
-        .maxSelectable(9)
-        .addFilter(new GifSizeFilter(320, 320, 5 * Filter.K * Filter.K))
-        .gridExpectedSize(getResources().getDimensionPixelSize(R.dimen.grid_expected_size))
-        .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED)
-        .thumbnailScale(0.85f)
-        .imageEngine(new GlideEngine())
-        .forResult(REQUEST_CODE_CHOOSE);
-```
- 
-#### Themes
-There are two built-in themes you can use to start `MatisseActivity`:
-- `R.style.Matisse_Zhihu` (light mode)
-- `R.style.Matisse_Dracula` (dark mode)  
-
-And Also you can define your own theme as you wish.
-
-#### Receive Result
-In `onActivityResult()` callback of the starting `Activity` or `Fragment`:
-
-```java
-List<Uri> mSelected;
-
-@Override
-protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-    super.onActivityResult(requestCode, resultCode, data);
-    if (requestCode == REQUEST_CODE_CHOOSE && resultCode == RESULT_OK) {
-        mSelected = Matisse.obtainResult(data);
-        Log.d("Matisse", "mSelected: " + mSelected);
-    }
-}
-```
-
-#### More
-Find more details about Matisse in [wiki](https://github.com/zhihu/Matisse/wiki).
-
-## Contributing
- - To contribute with a small fix, simply create a pull request.
- - Better to open an issue to discuss with the team and the community if you're intended to work on something BIG. Also you can check our [roadmap](https://github.com/zhihu/Matisse/wiki/Roadmap).
- - Please follow [Code Style for Contributors](https://source.android.com/source/code-style) of AOSP.
-
-## Thanks
-This library is inspired by [Laevatein](https://github.com/nohana/Laevatein) and uses some of its source code.
-
-## License
-
-    Copyright 2017 Zhihu Inc.
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+1 (4.550%) : *****
+2 (32.123%) : ********************************
+3 (23.623%) : ************************
+4 (8.322%) : ********
+5 (3.484%) : ***
+6 (10.008%) : **********
+7 (7.555%) : ********
+8 (1.892%) : **
+9 (8.443%) : ********
