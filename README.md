@@ -12,9 +12,9 @@ According to Benford’s law, each digit occurs as the first significant digit i
 - Define custom filter rules
 - More to find out yourself
 
-| Zhihu Style                    | Dracula Style                     | Preview                          |
-|:------------------------------:|:---------------------------------:|:--------------------------------:|
-|![](image/screenshot_zhihu.png) | ![](image/screenshot_dracula.png) | ![](image/screenshot_preview.png)|
+| Digit                          |    Percentage                     | 
+|:------------------------------:|:---------------------------------:|
+| 1                              |30.103%                            |
 
 ## Download
 Gradle:
